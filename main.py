@@ -153,16 +153,16 @@ def main():
                         st.session_state.regenerate_counter = 0
                     words = text.split()
                     numwords = len(words)
-                    if numwords > 3000:
-                        st.error(f"Text is too long ({numwords} words). Maximum allowed is 3000 words. Please reduce the text length and try again. Can delete references.")
+                    if numwords > 5000:
+                        st.error(f"Text is too long ({numwords} words). Maximum allowed is 5000 words. Please reduce the text length and try again. Can delete references.")
                         st.stop()
                     max_words = st.sidebar.slider(
                         "Maximum desired word length",
                         min_value = 100,
-                        max_value = 3000,
+                        max_value = 5000,
                         value = numwords,
                         step = 50,
-                        help = "Limit the length of text to <3000 for analysis"
+                        help = "Limit the length of text to <5000 for analysis"
                     )
                     with st.spinner("Analyzing with Azure AI...."):
                         enhanced_text = text_analyzer.analyze_text_ai(client, text + f"_{st.session_state.regenerate_counter}", max_words=numwords)
