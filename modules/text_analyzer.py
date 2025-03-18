@@ -293,7 +293,7 @@ class TextAnalyzer:
 
         main_content = TextAnalyzer.extract_main_content(text)
         try:
-            max_tokens = int(max_words * 1.3) if max_words else 3000
+            max_tokens = int(max_words * 1.3) if max_words else 5000
             response = client.chat.completions.create(
                 model=os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME"),
                 messages=[
