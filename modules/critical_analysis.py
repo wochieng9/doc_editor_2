@@ -35,7 +35,7 @@ class CriticalAnalyzer:
         self.azure_client = AzureClient()
         self.client = self.azure_client.setup_azure_client()
 
-    def get_completion(self, messages, temperature=0.7, max_tokens=3000):
+    def get_completion(self, messages, temperature=0.7, max_tokens=5000):
         """Get completion from Azure OpenAI"""
         if not self.client:
             raise ValueError("Azure OpenAI client not initialized")
