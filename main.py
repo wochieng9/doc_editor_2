@@ -153,8 +153,8 @@ def main():
                         st.session_state.regenerate_counter = 0
                     words = text.split()
                     numwords = len(words)
-                    if numwords > 5000:
-                        st.error(f"Text is too long ({numwords} words). Maximum allowed is 5000 words. Please reduce the text length and try again. Can delete references.")
+                    if numwords > 8000:
+                        st.error(f"Text is too long ({numwords} words). Maximum allowed is 8000 words. Please reduce the text length and try again. Can delete references.")
                         st.stop()
                     max_words = st.sidebar.slider(
                         "Maximum desired word length",
