@@ -159,10 +159,10 @@ def main():
                     max_words = st.sidebar.slider(
                         "Maximum desired word length",
                         min_value = 100,
-                        max_value = 5000,
+                        max_value = 8000,
                         value = numwords,
                         step = 50,
-                        help = "Limit the length of text to <5000 for analysis"
+                        help = "Limit the length of text to <8000 for analysis"
                     )
                     with st.spinner("Analyzing with Azure AI...."):
                         enhanced_text = text_analyzer.analyze_text_ai(client, text + f"_{st.session_state.regenerate_counter}", max_words=numwords)
